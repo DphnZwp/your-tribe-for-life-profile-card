@@ -10,54 +10,45 @@
   }
 
   function handleClick() {
-		alert('clicked')
+    console.log('click')
 	}
 </script>
 
-<section class="card" on:click={handleClick}>
-  <div class="home-title">
+<article class="card" on:click={handleClick}>
+  <section class="hero">
     <h1>{title}</h1>
     <h2>Frontend Developer</h2>
-  </div>
-  <div class="hero-text">
+  </section>
+
+  <section>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae 
       dolorum impedit in magnam unde velit recusandae quas, modi consequatur? 
       Ipsam soluta voluptates, ullam cum rem sequi ducimus minus odit neque.</p>
-  </div>
+  </section>
 
-  <div class="button-title">
+  <section class="button-title">
     <h2>Change title with button</h2>
     <button on:click={updateTitle}>Change title</button>
-  </div>
+  </section>
 
-  <div class="input-title">
+  <section class="input-title">
     <h2>Change title with input</h2>
     <input type="text" bind:value={title}>
-  </div>
+  </section>
 
-  <a href="/about">About my site</a>
-</section>
+  <a href="/back">Achterkant</a>
+</article>
 
 <style>
-  :global(*) {
-    margin: 0;
-    padding: 0;
-  }
-  
-  :global(body) {
-    font-family: Helvetica, sans-serif;
-  }
-
-  :global(::selection) {
-    color: #fff;
-    background-color: #443e73;
-  }
-
   .card {
     background-color: #292643;
   }
 
   h1 {
     font-size: 5rem;
+  }
+
+  a {
+    color: #fff;
   }
 </style>
