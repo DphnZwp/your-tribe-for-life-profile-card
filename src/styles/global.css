@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+::selection {
+  color: #fff;
+  background-color: #3a457f;
+}

@@ -41,14 +41,10 @@
 
 <style>
   .card {
-    background-color: #292643;
+    background-color: white;
   }
 
   h1 {
     font-size: 5rem;
-  }
-
-  a {
-    color: #fff;
   }
 </style>
