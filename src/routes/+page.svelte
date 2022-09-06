@@ -3,17 +3,21 @@
 </svelte:head>
 
 <script>
-  let title = 'Welcome to SvelteKit'
+  let title = 'Daphne Zwuup'
 
   const updateTitle = () => {
     title = 'Something different'
   }
+
+  function handleClick() {
+		alert('clicked')
+	}
 </script>
 
-<section class="home">
+<section class="card" on:click={handleClick}>
   <div class="home-title">
-    <img src="/favicon.png" alt="">
     <h1>{title}</h1>
+    <h2>Frontend Developer</h2>
   </div>
   <div class="hero-text">
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae 
@@ -41,52 +45,19 @@
   }
   
   :global(body) {
-      background-color: #8fbbbd;
+    font-family: Helvetica, sans-serif;
   }
 
   :global(::selection) {
     color: #fff;
-    background-color: #292351;
+    background-color: #443e73;
+  }
+
+  .card {
+    background-color: #292643;
   }
 
   h1 {
     font-size: 5rem;
-    text-align: center;
-  }
-
-  .home-title {
-    margin-bottom: 1em;
-    display: flex;
-  }
-
-  .button-title {
-    margin-top: 1em;
-    text-align: center;
-  }
-
-  .input-title {
-    margin-top: 1em;
-    text-align: center;
-  }
-
-  .home {
-    margin-top: 2em;
-    padding: 1em;
-    font-family: "Satoshi", sans-serif;
-    display: grid;
-    place-items: center;
-  }
-
-  .hero-text {
-    padding: 1em;
-    background-color: aliceblue;
-    border-radius: 3em;
-    width: fit-content;
-  }
-
-  p {
-    padding: 1em;
-    text-align: center;
-    max-width: 60em;
   }
 </style>
