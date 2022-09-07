@@ -1,5 +1,5 @@
 {
-	"name": "my-app",
+	"name": "your-tribe-for-life-profile-card",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -8,6 +8,8 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
+		"@prismicio/client": "^6.7.0",
+		"@prismicio/helpers": "^2.3.3",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"svelte": "^3.44.0",

@@ -1,8 +1,10 @@
 <svelte:head>
-<title>FDND Squadpagina</title>
+<title>Daphne Zwuup visitekaartje</title>
 </svelte:head>
 
 <script>
+  export let data;
+
   let title = 'Daphne Zwuup'
 
   const updateTitle = () => {
@@ -18,6 +20,7 @@
   <section class="hero">
     <h1>{title}</h1>
     <h2>Frontend Developer</h2>
+    <!-- <p>{document.data.title}</p> -->
   </section>
 
   <section>
@@ -38,6 +41,8 @@
 
   <a href="/back">Achterkant</a>
 </article>
+
+<pre>{JSON.stringify(data.document, null, 2)}</pre>
 
 <style>
   .card {
