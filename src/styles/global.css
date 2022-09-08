@@ -1,13 +1,26 @@
+:root {
+	--light-blue: #dcdfef;
+	--dark-blue: #3a457f;
+	--white: #fff;
+	--black: #000;
+}
+
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: Kelson Sans, sans-serif;
 }
 
-::selection {
-  color: #fff;
-  background-color: #3a457f;
+h1 {
+  font-size: 2.25rem;
+}
+
+p {
+  margin-top: 1em;
 }

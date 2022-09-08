@@ -1,42 +1,67 @@
+<svelte:head>
+  <link href="//db.onlinewebfonts.com/c/834722cfb0041aa6c720fde8d49fc2e4?family=Kelson" rel="stylesheet" type="text/css"/>
+</svelte:head>
+
 <script>
-  // import * as prismicH from '@prismicio/helpers';
+  import * as prismicH from '@prismicio/helpers';
   export let data;
   console.log(data);
   let flip = false;
 </script>
 
-<main>
-    <!-- <pre>{JSON.stringify(data.document, null, 2)}</pre> -->
-  <section class="business-card" class:flip="{flip}" on:click="{() => flip = !flip}">
-    <article class="front">
+<main class="business-card" class:flip="{flip}" on:click="{() => flip = !flip}">
+  <!-- <pre>{JSON.stringify(data.document, null, 2)}</pre> -->
+  <article class="front">
+    <section>
+      <img class="logo" src="{data.document.logo.url}" alt="Logo met de naam Daphne Zwuup">
       <h1>{data.document.title}</h1>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta nisi maiores totam modi. Quidem repellendus ipsa praesentium architecto impedit! Quasi atque earum cupiditate excepturi dolorum mollitia recusandae dicta aspernatur magnam?</p>
-    </article>
-    
-    <article class="back">
-      <h2>Kopje 2</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde voluptates ut nihil dolorem facilis cupiditate mollitia praesentium. Facere quo saepe minus, non vero rerum dignissimos dolorum fuga laudantium mollitia.</p>
-    </article>
-  </section>
+      <p>{@html prismicH.asHTML(data.document.content)}</p>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/daphne-zwuup-a85867170/?originalSubdomain=nl" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 203.2 200" enable-background="new 0 0 203.2 200" xml:space="preserve"><g><g><g><g><path d="M203.1,106.3c0-4.6-0.4-8.6-1.3-12.2c-4.2-17.9-15.1-30.1-32.3-36.2c-7.3-2.6-14.7-2.7-22.3-2.6c-11.4,0.2-21.4,3.6-29.8,10.1c-0.5-1.1-1.1-2.1-2-3c-2.3-2.5-5.6-3.9-9.2-3.8c-6.7,0.2-13.5,0.1-20.1,0.1l-3.8,0c-2,0-4,0-6,0c-7.4,0-11.6,4.3-11.6,11.7v118.4c0,7,4.2,11.3,11.4,11.3l16.8,0l17.2,0c7.2,0,11.4-4.3,11.4-11.5v-17.2c0-16.6,0-33.3,0-49.9c0-1.7,0.1-3.2,0.3-4.5c1.1-7.8,7.8-13,15.6-12.1c5,0.6,11.1,3.7,12,10.7c0.2,1.7,0.3,3.5,0.3,5.8c0,13.9,0,27.8,0,41.7l0,25.2c0,7.2,4.5,11.8,11.7,11.8c10,0,20.1,0,30.1,0c7.1,0,11.6-4.6,11.6-11.7l0-18.4c0-7.4,0-14.8,0-22.3C203.2,133.9,203.2,120.1,203.1,106.3z M164.1,120.7c-0.1-4.9-0.7-9.2-1.9-13c-3.5-10.6-14.8-17.9-27-17.5c-14.9,0.6-27,12.6-27.6,27.4c-0.2,4.1-0.1,8.2-0.1,12.2l0,0.6c0,1.3,0,2.6,0,3.9c0,12.7,0,25.4,0,38.1v13H79.7V73.1h24.4v23.6c5.1-7,10.3-11.9,14.2-15c2.1-1.7,7.5-6.2,13.3-8.4c1.9-0.7,5.1-1.8,8.2-2.5c1.2-0.3,2-0.4,2.7-0.6c1.4-0.2,3.3-0.5,5.5-0.5c6.8-0.1,12.8,0,18.3,2.2c13.8,5.7,21.1,16,22.5,31.5c0.1,0.9,0.1,1.9,0.1,2.9v79h-24.4c0-5.1,0-10.1,0-15.2v-0.6C164.3,153.5,164.3,137,164.1,120.7z"></path></g></g><g><g><path d="M42.1,58.6h-2.7c4.7-1.5,9-4.3,12.5-8c6.7-7.2,9.5-17.2,7.6-26.8C56.6,10.1,44.5,0.1,30.4,0h-0.3C16.2,0,4.1,9.6,0.8,23.3L0,26.7v7.4l0.3,0.7c0,0.1,0.1,0.2,0.2,0.4c2.1,11.4,9.9,20.1,20.4,23.5H18c-9.2,0-14.8,5.5-14.8,14.6c0,35.8,0,73.5,0,112.1c0,8.8,5.9,14.7,14.7,14.7c3.8,0,7.6,0,11.7,0c3.9,0,8.1,0,12.4,0c8.8,0,14.8-6,14.8-14.8v-71.5c0-13.5,0-26.9,0-40.4c0-4.4-1.5-8-4.1-10.6C50.1,60.1,46.4,58.6,42.1,58.6z M2,34.6L2,34.6l0.3-0.2L2,34.6z M18.8,40.8c-2.8-2.8-4.3-6.7-4.3-10.9c0.1-8.8,6.9-15.4,15.8-15.5l0.2,0c3.8,0,7.5,1.6,10.4,4.4c3,3,4.7,6.9,4.7,11.1v0c0,8.3-6.8,15.6-14.5,15.6C26.2,45.6,21.8,43.9,18.8,40.8z M42.3,185.5c-0.2,0-0.5,0-0.7,0c-7.8,0-15.6,0-23.4,0c-0.2,0-0.4,0-0.5,0c0-0.1,0-0.3,0-0.5c0-37.2,0-74.3,0-111.5c0-0.1,0-0.3,0-0.5h23.7c0.2,0,0.6,0,0.9,0c0,0.3,0,0.7,0,0.9V185.5z"></path></g></g></g></g></svg>
+        </a>
+        <a href="https://codepen.io/DphnZwp" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 207.8 200" style="enable-background:new 0 0 207.8 200;" xml:space="preserve"><path class="st0" d="M75.2,159.9"></path><g><g><g><path d="M202.7,62.1c-1-2.3-2.2-3.9-4-5c-16.4-10-32.7-20-49.1-30c-12.1-7.4-24.2-14.8-36.2-22.2c-2.2-1.3-4.6-2.7-7.9-4.3c-2.1-1-4.3-0.9-6.5,0.4L85.7,9.2c-25,15.2-50.9,30.9-76.4,46.3c-4.7,2.8-6.7,6.4-6.6,12c0.3,19.3,0.2,38.6,0,58.4c0,3.2,1,5.5,3.3,7.3c1.1,0.8,2.1,1.7,3.2,2.6c3.4,2.8,7,5.7,10.7,8.3c10.4,7.1,20.9,14.3,31.2,21.3c8.3,5.6,16.9,11.5,25.3,17.3c3.9,2.7,7.8,5.5,11.6,8.3c2.7,1.9,5.4,3.9,8.1,5.9c1.2,0.8,2.5,1.5,3.7,2.2c0.6,0.3,1.1,0.6,1.7,0.9l0.2,0.1h2.5l0.2-0.1c0.5-0.3,0.9-0.5,1.4-0.8c1-0.6,2.1-1.1,3.1-1.8c28-19.4,56-38.7,83.9-58.1l0.7-0.5c1.6-1.1,3.2-2.2,4.7-3.4c1.1-0.9,2-2,3-3c0.4-0.4,0.8-0.9,1.2-1.3l0.3-0.3V62.3L202.7,62.1z M110,20l72.4,44.1l-36.6,25.5L123.6,76c-4.2-2.6-8.5-5.2-12.8-7.8c-0.4-0.2-0.8-0.8-0.8-1c0-13.7,0-27.2,0-41.5V20z M159.3,97.7l28.9-20.2v37.8L159.3,97.7z M95.6,20v9.5c0,12.3,0,24.7,0,37c0,1-0.2,1.4-0.9,1.8c-9.8,6-19.8,12.1-29.5,18.1l-4.5,2.8c-0.8,0.5-0.9,0.5-1.4,0.2c-9.3-6.5-18.8-13.1-27.9-19.5l-8.3-5.8L95.6,20z M17.3,115.2V77.5l29.2,20.3L17.3,115.2z M95.6,173.3v5.8l-72.4-50.4l18.2-11.1c5.6-3.4,11.3-6.9,16.9-10.4c0.8-0.5,1-0.5,1.8,0.1c5.8,4.1,11.6,8.1,17.4,12.2c5.7,4,11.4,7.9,17.1,11.9c0.5,0.4,0.9,1,0.9,1.2C95.6,146.1,95.6,159.3,95.6,173.3z M103.1,119.2c-0.1,0.1-0.5,0.1-0.5,0.1c-8.8-6.1-17.8-12.3-26.5-18.4l-3.4-2.4l7.9-4.8c6.9-4.2,14.1-8.6,21.1-12.9c0.9-0.6,1.4-0.6,2.4,0c6.9,4.3,14,8.5,20.8,12.7l7.6,4.6c0.2,0.1,0.4,0.2,0.6,0.4l-3.8,2.6C120.4,107.3,111.8,113.3,103.1,119.2z M110,179.1v-35.6c0-0.9,0-1.8,0-2.8c0-2.6,0-5.2,0.1-7.8c0-0.4,0.3-1,0.6-1.2c11.8-8.3,23.7-16.5,35.2-24.5c0.1-0.1,0.4-0.1,0.7-0.1c0.2,0,0.3,0,0.4,0.1c10.8,6.5,21.7,13.1,32.2,19.6l3.3,2L110,179.1z"></path></g></g></g></svg>
+        </a>
+        <a href="https://github.com/DphnZwp" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 207.8 200" style="enable-background:new 0 0 207.8 200;" xml:space="preserve"><path class="st0" d="M75.2,159.9"></path><g><g><g><path d="M203.8,74.7c-6.4-24.1-19.5-43-39-56C135.3-1,102.6-5.2,67.7,6.3c-21.9,7.2-39,20.5-51,39.6C1,70.9-3.6,97.9,2.8,126.1c8.2,36,31.4,60.7,68.9,73.3c1.2,0.4,2.5,0.6,3.8,0.6c2.4,0,4.7-0.7,6.8-2.2c3.2-2.2,5.1-5.9,5.2-9.7l0-0.1l0-0.1c-1-7.6-1-15.3-0.1-22.9c0.5-3.8,1.2-7.5,2.1-11.2c0.8-1.6,1.6-3.1,2.4-4.5l0.3-0.6c0.9-1.5,1.5-2.6,1.6-4.2c0-0.9-0.1-1.9-0.4-2.8c-0.9-2.7-3-4.4-6.1-4.9c-0.9-0.2-1.9-0.3-2.8-0.5c-3.7-0.6-7.6-1.3-11.3-2.3c-8.7-2.4-14.9-7.1-18.5-14.1c-4.5-8.6-5.8-18.1-4.1-29.2c0.8-5,3.6-9.1,6.6-12.8c2.6-3.2,3.2-6.4,1.8-10.1c-1.5-3.9-1.6-8.3-0.2-13.3c0.2,0,0.4,0.1,0.7,0.2c1,0.3,2,0.5,2.8,0.9c4.6,2.3,8.3,4.3,11.6,6.2c3.4,2,6.5,2.4,10.1,1.5c12.6-3.2,24.3-3.5,35-0.9c8.2,2,14.4,0.8,20.4-3.7c2-1.5,4.5-2.4,7.1-3.4c0.9-0.3,1.8-0.7,2.7-1c1.3,5,1.2,9.7-0.3,14.5c-1.1,3.6-0.4,6.5,2.2,9.2c3,3.2,5.1,7.3,6.3,12.1c1.3,5.4,0.8,10.9,0.3,16.1c-1.6,15.1-9.5,24.3-24.2,27.9c-1.6,0.4-3.1,0.8-4.7,1.1c-3.2,0.7-6.6,1.5-9.8,2.5c-2.5,0.8-4.3,2.6-4.8,4.8c-0.6,2.3,0.3,4.9,2.3,6.9c1.8,1.8,2.9,3.8,3.4,6.3c1,4.6,0.8,9.4,0.6,14c0,1.4-0.1,2.7-0.1,4.1c0,0.8,0,1.6-0.1,2.4c-0.1,4.1-0.2,8.3,0.3,12.4c0.5,3.8,2.1,6.8,4.7,8.7c2.7,2,6.2,2.6,10.1,2c2.8-0.5,5.4-1.5,8-2.5c22.6-8.8,39.6-22.8,50.7-41.9C208.2,130.5,211.5,103.5,203.8,74.7z M136.7,165c-0.4-5.1-1.5-10.2-3.2-15.1c0.4-0.1,0.8-0.2,1.1-0.3c1.6-0.4,3-0.9,4.5-1.3c19.2-6.3,32-22.8,33.6-42.9c1-13.4-1.8-24.7-8.6-34.5c-0.2-0.2-0.2-0.8-0.1-1.5c1.2-7.7,0.8-14.6-1-21.2c-0.3-1.2-0.8-2.4-1.6-3.9c-1.5-3.1-4.1-4.7-7.6-4.9c-7-0.3-13.2,2.1-18.4,4.5l-0.8,0.4c-1.5,0.7-3.1,1.4-4.5,2.5c-2,1.5-4.1,1.8-7.3,1.2c-12.9-2.6-26.6-2.5-40.6,0.4c-0.7,0.2-1.8,0-2.5-0.4c-5.7-3.2-12.5-6.6-20.3-8.2l-0.1,0c-0.1,0-0.2-0.1-0.3-0.1c-8.3-1.5-11.9,0.7-14.3,8.6c-2.2,7.1-2.5,14.2-1.1,21.2c0.1,0.5-0.1,1.3-0.4,1.8c-6.8,9.7-9.5,20.9-8.1,34.4c1.2,12.1,5.5,22.1,13,30.6c3.9,4.4,8.2,6.5,10.7,7.7l0.5,0.2c5,2.5,10.4,4,16,4.5c-0.8,2-1.3,4.1-1.7,6l-0.1,0.5c-0.2,0.9-0.2,1.3-0.5,1.7c-1.2,1.5-4.2,1.2-5.8,1.1c-3.6-0.3-6.2-1.6-6.7-1.9c-3.9-2.1-6.1-5.2-10-10.9c-0.8-1.2-1.7-2.4-2.7-3.8c-3.6-5.1-11.3-13.3-16.4-13.4c-1.7-0.1-3.7,1.3-4.7,2.5c-0.6,0.7-1.2,1.8-0.9,2.8c0.6,2.6,2.2,4.4,4.5,6.9c2,2.2,4.5,5,7.4,9.5c4.9,7.6,8.8,12.8,11.7,15.5c0.7,0.6,1.4,1.2,2.1,1.7c2.1,1.5,4.5,2.6,6,3.3c0.3,0.2,0.6,0.3,0.8,0.4c6.1,3,11.7,2,14,1.5c0,0,0,0,0,0c0.1,3.1-0.2,7.9-2.2,9.3c-1.3,0.9-3.8,0.5-7.2-1.2l-18.5-12.1c-0.3-0.2-0.6-0.5-0.8-0.7c-0.5-0.4-1-0.8-1.4-1.2c-14.9-13.7-23.7-30.8-26.2-50.8C12.7,89.7,19,66.7,34.7,46.8C47.8,30.2,65.6,20,87.4,16.5c18.7-3,36.3-1.2,52.2,5.3c23.5,9.7,39.6,27,48.1,51.6c8.4,24.4,6.9,48-4.6,70.2c-8.8,17-22.9,29.8-42.1,38c-1.5,0.7-3.2,1.3-4.8,1.8l-1.1,0.4C136.7,177.7,137.2,171.3,136.7,165z"></path></g></g></g></svg>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <img class="daphne-laptop" src="{data.document.image.url}" alt="Logo met de naam Daphne Zwuup">
+    </section>
+  </article>
+  
+  <article class="back">
+    <h2>Kopje 2</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde voluptates ut nihil dolorem 
+      facilis cupiditate mollitia praesentium. Facere quo saepe minus, non vero rerum dignissimos dolorum 
+      fuga laudantium mollitia.
+    </p>
+  </article>
 </main>
 
 <style>
-  .business-card.flip .front {
-    transform: rotateY(180deg)
-  }
-
-  .business-card.flip .back {
-    transform: rotateY(0deg)
+  .logo {
+    width: 25em;
   }
 
   .business-card {
+    margin-top: 2em;
+    margin-right: 15em;
+    margin-left: 15em;
     perspective: 600px;
   }
 
   .front {
-    margin: 3em;
-    color: white;
-    background-color: purple;
+    padding: 5em;
+    background-color: var(--light-blue);
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
     position: absolute;
     transform: rotateX(0deg) rotateY(0deg);
     transform-style: preserve-3d;
@@ -45,14 +70,42 @@
   }
 
   .back {
-    margin: 3em;
-    color: white;
-    background-color: purple;
+    padding: 3em;
+    background-color: var(--light-blue);
     position: absolute;
     transform: rotateY(-180deg);
     transform-style: preserve-3d;
     transform-style: preserve-3d;
     transition: transform 4s cubic-bezier(0.2, 1, 0.3, 1.3);
     backface-visibility: hidden;
+  }
+
+  .business-card.flip .front {
+    transform: rotateY(180deg)
+  }
+
+  .business-card.flip .back {
+    transform: rotateY(0deg)
+  }
+
+  .daphne-laptop {
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+    width: 80%;
+  }
+
+  .socials {
+    margin-top: 2em;
+    display: flex;
+    gap: 1em;
+  }
+
+  .socials svg {
+    height: 3em;
+  }
+
+  .socials svg:hover {
+    fill: var(--dark-blue);
   }
 </style>
