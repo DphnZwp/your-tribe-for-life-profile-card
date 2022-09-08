@@ -1,55 +1,13 @@
-<svelte:head>
-<title>Daphne Zwuup visitekaartje</title>
-</svelte:head>
-
 <script>
+  // import * as prismicH from '@prismicio/helpers';
   export let data;
-
-  let title = 'Daphne Zwuup'
-
-  const updateTitle = () => {
-    title = 'Something different'
-  }
-
-  function handleClick() {
-    console.log('click')
-	}
 </script>
 
-<article class="card" on:click={handleClick}>
-  <section class="hero">
-    <h1>{title}</h1>
-    <h2>Frontend Developer</h2>
-    <!-- <p>{document.data.title}</p> -->
-  </section>
+<main>
 
-  <section>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae 
-      dolorum impedit in magnam unde velit recusandae quas, modi consequatur? 
-      Ipsam soluta voluptates, ullam cum rem sequi ducimus minus odit neque.</p>
-  </section>
+  <pre>{JSON.stringify(data.document, null, 2)}</pre>
 
-  <section class="button-title">
-    <h2>Change title with button</h2>
-    <button on:click={updateTitle}>Change title</button>
-  </section>
-
-  <section class="input-title">
-    <h2>Change title with input</h2>
-    <input type="text" bind:value={title}>
-  </section>
-
-  <a href="/back">Achterkant</a>
-</article>
-
-<pre>{JSON.stringify(data.document, null, 2)}</pre>
+</main>
 
 <style>
-  .card {
-    background-color: white;
-  }
-
-  h1 {
-    font-size: 5rem;
-  }
 </style>
