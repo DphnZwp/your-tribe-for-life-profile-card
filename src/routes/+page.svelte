@@ -6,6 +6,7 @@
   import * as prismicH from '@prismicio/helpers';
   export let data;
   console.log(data);
+  
   let flip = false;
 </script>
 
@@ -35,12 +36,8 @@
   </article>
   
   <article class="back">
-    <h2>Kopje 2</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde voluptates ut nihil dolorem 
-      facilis cupiditate mollitia praesentium. Facere quo saepe minus, non vero rerum dignissimos dolorum 
-      fuga laudantium mollitia.
-    </p>
+    <img class="logo" src="{data.document.logo.url}" alt="Logo met de naam Daphne Zwuup">
+    <h2>Een Frontend Developer met een creatief denkbeeld</h2>
   </article>
 </main>
 
@@ -56,6 +53,8 @@
     perspective: 600px;
   }
 
+  /* FRONT BUSINESS CARD */
+
   .front {
     padding: 5em;
     background-color: var(--light-blue);
@@ -69,23 +68,8 @@
     backface-visibility: hidden;
   }
 
-  .back {
-    padding: 3em;
-    background-color: var(--light-blue);
-    position: absolute;
-    transform: rotateY(-180deg);
-    transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    transition: transform 4s cubic-bezier(0.2, 1, 0.3, 1.3);
-    backface-visibility: hidden;
-  }
-
   .business-card.flip .front {
     transform: rotateY(180deg)
-  }
-
-  .business-card.flip .back {
-    transform: rotateY(0deg)
   }
 
   .daphne-laptop {
@@ -107,5 +91,23 @@
 
   .socials svg:hover {
     fill: var(--dark-blue);
+  }
+
+  /* BACK BUSINESS CARD */
+
+  .back {
+    padding: 3em;
+    width: 100%;
+    background-color: var(--light-blue);
+    position: absolute;
+    transform: rotateY(-180deg);
+    transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: transform 4s cubic-bezier(0.2, 1, 0.3, 1.3);
+    backface-visibility: hidden;
+  }
+
+  .business-card.flip .back {
+    transform: rotateY(0deg)
   }
 </style>
