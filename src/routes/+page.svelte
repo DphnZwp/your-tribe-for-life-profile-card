@@ -6,7 +6,7 @@
   import * as prismicH from '@prismicio/helpers';
   export let data;
   console.log(data);
-  
+
   let flip = false;
 </script>
 
@@ -36,7 +36,7 @@
   </article>
   
   <article class="back">
-    <img class="logo" src="{data.document.logo.url}" alt="Logo met de naam Daphne Zwuup">
+    <img class="second-logo" src="{data.document.second_logo.url}" alt="Logo met de naam Daphne Zwuup">
     <h2>Een Frontend Developer met een creatief denkbeeld</h2>
   </article>
 </main>
