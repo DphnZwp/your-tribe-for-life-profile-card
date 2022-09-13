@@ -45,7 +45,7 @@
         </div>
     </section>
   </article>
-  <button class="back-button">{visible ? 'Voorkant' : 'Achterkant'}</button>
+  <button class="back-button">{visible ? 'Naar de voorkant' : 'Naar de achterkant'}</button>
 </main>
 
 <style>
