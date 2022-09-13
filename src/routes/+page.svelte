@@ -15,7 +15,7 @@
   }
 </script>
 
-<main class="business-card" class:flip="{flip}" on:click="{() => flip = !flip}">
+<main class="business-card" class:flip="{flip}" on:click="{() => flip = !flip}" on:click="{changeTitle}">
   <!-- <pre>{JSON.stringify(data.document, null, 2)}</pre> -->
   <article class="front">
     <section class="hero">
@@ -46,7 +46,7 @@
         </div>
     </section>
   </article>
-  <button class="back-button" on:click="{changeTitle}">{visible ? 'Voorkant' : 'Achterkant'}</button>
+  <button class="back-button">{visible ? 'Voorkant' : 'Achterkant'}</button>
 </main>
 
 <style>
