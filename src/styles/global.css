@@ -14,17 +14,20 @@
 }
 
 body {
+	display: flex;
+	justify-content: center;
+	height: 100vh;
   font-family: Kelson Sans, sans-serif;
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 4em;
+  font-size: 2rem;
 }
 
 p {
-  margin-top: 1em;
+  margin-top: 1rem;
 }
