@@ -16,7 +16,6 @@
 </script>
 
 <main class="business-card" class:flip="{flip}" on:click="{() => flip = !flip}" on:click="{changeTitle}">
-  <!-- <pre>{JSON.stringify(data.document, null, 2)}</pre> -->
   <article class="front">
     <section class="hero">
       <h1>{data.document.title}</h1>
@@ -73,12 +72,12 @@
     cursor: pointer;
   }
 
-  .hero {
-    grid-column: 1/3;
-  }
-
   .business-card.flip .front {
     transform: rotateY(180deg)
+  }
+
+  .hero {
+    grid-column: 1/3;
   }
 
   .daphne-laptop {
