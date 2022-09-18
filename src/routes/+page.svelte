@@ -33,7 +33,7 @@
     </section>
 
     <section class="contact">
-        <div class="icons">
+        <div class="contact__icons">
           <a class="email-icon" href="mailto:zwuupdaphne@gmail.com">
             <svg
             aria-hidden="true"
@@ -133,7 +133,7 @@
     width: 100%;
   }
 
-  .icons {
+  .contact__icons {
     margin-top: 2em;
     display:flex;
     justify-content: center;
@@ -162,7 +162,7 @@
       z-index: 1;
     }
 
-  @media (min-width: 90em) {
+  @media (min-width: 92em) {
     .btn {
       margin-top: 35em;
       z-index: 1;
