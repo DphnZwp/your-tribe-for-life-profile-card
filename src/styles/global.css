@@ -33,3 +33,129 @@ p {
   margin-top: 1rem;
 	line-height: 1.5;
 }
+
+.btn {
+	padding: .8em 2em;
+	border: none;
+	cursor: pointer;
+}
+
+.btn--blue {
+	color: var(--white);
+	background-color: var(--dark-blue);
+}
+
+.business-card {
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	width: 55vw;
+	perspective: 600px;
+}
+
+/* FRONT BUSINESS CARD */
+
+.front-card {
+	padding: 5em;
+	background-color: var(--light-blue);
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 1em;
+	position: absolute;
+	transform: rotateX(0deg) rotateY(0deg);
+	transform-style: preserve-3d;
+	transition: transform 4s cubic-bezier(0.2, 1, 0.3, 1.3);
+	backface-visibility: hidden;
+	cursor: pointer;
+}
+
+.business-card.flip .front-card {
+	transform: rotateY(180deg)
+}
+
+.hero {
+	grid-column: 1/3;
+}
+
+.daphne-laptop {
+	margin-left: auto;
+	margin-right: 0;
+	display: block;
+	height: 13em;
+}
+
+/* BACK BUSINESS CARD */
+
+.back-card {
+	padding: 5em;
+	width: 100%;
+	background-color: var(--dark-blue);
+	position: absolute;
+	transform: rotateY(-180deg);
+	transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	transition: transform 4s cubic-bezier(0.2, 1, 0.3, 1.3);
+	backface-visibility: hidden;
+	cursor: pointer;
+}
+
+.business-card.flip .back-card {
+	transform: rotateY(0deg)
+}
+
+.logo {
+	width: 100%;
+}
+
+.contact__heading {
+	margin-top: .5em;
+	text-align: center;
+}
+
+.contact__icons {
+	margin-top: 1em;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 2em;
+}
+
+.email-icon,
+.phone-icon {
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	gap: .5em;
+	fill: var(--white);
+}
+
+svg {
+	height: 2em;
+}
+
+a {
+	color: var(--white);
+	text-decoration: none;
+}
+
+.btn {
+		margin-top: 40em;
+		z-index: 1;
+	}
+
+@media (min-width: 92em) {
+	.btn {
+		margin-top: 35em;
+		z-index: 1;
+	}
+}
+
+@media (min-width: 70em) {
+	.front-card {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.contact__icons {
+		flex-direction: row;
+	}
+}
