@@ -1,4 +1,5 @@
 <svelte:head>
+  <title>Visitekaartje Daphne Zwuup</title>
   <link href="//db.onlinewebfonts.com/c/834722cfb0041aa6c720fde8d49fc2e4?family=Kelson" rel="stylesheet" type="text/css"/>
 </svelte:head>
 
